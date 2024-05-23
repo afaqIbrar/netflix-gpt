@@ -8,6 +8,10 @@
     - Login Form
     - Form Validation
     - useRef Hooks
+    - Implement Sign in and Sign Up using firebase APIs
+    - Setup Redux and create redux store with user slice
+    - 
+
 
 
 # Features
