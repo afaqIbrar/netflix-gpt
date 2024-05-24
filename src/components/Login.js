@@ -1,34 +1,34 @@
 import React, { useState, useRef } from 'react'
 import Header from './Header'
 import { checkValidData } from '../utils/validate'
-import { createUserWithEmailAndPassword,signInWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from '../utils/firebase';
-import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import {addUser} from '../utils/userSlice';
+import { addUser } from '../utils/userSlice';
+import { BACK_IMAGE, DEFAULT_USER_AVATAR } from '../utils/constants';
+
 const Login = () => {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
   const toggleSignInForm = () => {
     setIsSignInForm(!isSignInForm);
+    setErrorMessage(null);
   }
   const handleButtonClick = () => {
     const message = checkValidData(email.current.value, password.current.value);
     setErrorMessage(message);
-    if(message) return;
-    if(!isSignInForm) {
+    if (message) return;
+    if (!isSignInForm) {
       // Sign Up here
-      createUserWithEmailAndPassword(auth,email.current.value,password.current.value)
+      createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
         .then((userCredentials) => {
-          const user  = userCredentials.user;
+          const user = userCredentials.user;
           updateProfile(user, {
-            displayName: fullName.current.value, photoURL: "https://avatars.githubusercontent.com/u/60314748?v=4"
+            displayName: fullName.current.value, photoURL: DEFAULT_USER_AVATAR
           }).then(() => {
-            const {uid,email,displayName,photoURL} = auth.currentUser;
-            dispatch(addUser({uid:uid , email:email, displayName:displayName , photoURL:photoURL}));
-            navigate('/browse');
+            const { uid, email, displayName, photoURL } = auth.currentUser;
+            dispatch(addUser({ uid: uid, email: email, displayName: displayName, photoURL: photoURL }));
           }).catch((err) => {
             setErrorMessage(err.message);
           });
@@ -37,19 +37,13 @@ const Login = () => {
           setErrorMessage(err.code + err.message);
         })
     } else {
-      signInWithEmailAndPassword(auth,email.current.value,password.current.value)
+      signInWithEmailAndPassword(auth, email.current.value, password.current.value)
         .then((userCredential) => {
-          // Signed in 
-          const user = userCredential.user;
-          console.log('sign in user',user);
-          navigate('/browse');
         })
         .catch((err) => {
-          console.log('err',err)
           setErrorMessage(err.code + err.message);
         });
     }
-    // Sign In / Sign Up
   }
 
   const email = useRef(null);
@@ -59,7 +53,7 @@ const Login = () => {
     <div>
       <Header />
       <div className='absolute'>
-        <img className="concord-img vlv-creative" src="https://assets.nflxext.com/ffe/siteui/vlv3/a99688ca-33c3-4099-9baa-07a2e2acb398/0279102c-4f3f-4ed2-a283-cce57434d595/PK-en-20240520-popsignuptwoweeks-perspective_alpha_website_small.jpg" alt="" />
+        <img className="concord-img vlv-creative" src={BACK_IMAGE} alt="" />
       </div>
       <div >
         <form onSubmit={(e) => e.preventDefault()} className='w-3/12 absolute p-12 bg-black bg-opacity-80 my-36 mx-auto right-0 left-0 text-white'>

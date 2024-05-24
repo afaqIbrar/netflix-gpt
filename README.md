@@ -12,6 +12,12 @@
     - Setup Redux and create redux store with user slice
     - Implement Sign out 
     - Update Profile
+    - Bug fix - Sign Up User Display Name and profile picture
+    - Bug fix - If user is not login redirect the /browse to login and vice versa that means protecting the routes
+    - As we move the onAuthStateChange listener to header then we have to unsubscribe the listener coz it can add multiple listeners
+    - Add the hard coded strings to contants file.
+    - Register TMDB API & create an app & get access token
+    - Get Data from TMDB now playing movies 
 
 
 
