@@ -18,6 +18,14 @@
     - Add the hard coded strings to contants file.
     - Register TMDB API & create an app & get access token
     - Get Data from TMDB now playing movies 
+    - Custom hook for now playing movies
+    - Create a movie slice
+    - Updated the store with movies
+    - Planning for container
+    - Add Title containers
+    - Fetch Data for trailer video
+    - Update store with trailer video data
+    - Embedded the youtube video and make it mute and auto play
 
 
 
