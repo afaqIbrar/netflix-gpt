@@ -8,4 +8,10 @@ export const API_OPTIONS = {
         Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1YmM1MGMwMmJlMDQ0Yzc2OTI4NWUzM2Q1YTZjMDcxMSIsInN1YiI6IjVmYjk3NGUzZGI5NTJkMDA0MTE5MWQxYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.k7WefTOjoxhBBfQc5ijXcwz55JnqaWkXtqggyuJXr0g'
     }
 };
-export const IMAGE_CDN = 'https://image.tmdb.org/t/p/w300'
+export const IMAGE_CDN = 'https://image.tmdb.org/t/p/w300';
+
+export const SUPPORTED_LANGUAGES = [
+    { identifier: "en", name: "English" },
+    { identifier: "ur", name: "Urdu" },
+    { identifier: "sp", name: "Spanish" },
+]

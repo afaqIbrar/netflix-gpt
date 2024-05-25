@@ -33,6 +33,8 @@
     - Add Now Playing, Toprated upcoming trending action in movies reducer
     - Add custom hooks for these movie types and dispatch the actions
     - Make the UI look good with tailwind
+    - Create GPT search bar
+    - Implement Multi Language feature in GPT Search 
     
 
 
