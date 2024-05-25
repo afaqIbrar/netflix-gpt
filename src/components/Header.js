@@ -54,9 +54,9 @@ const Header = () => {
     dispatch(resetGptSearch());
   }
   return (
-    <div className='absolute px-8 py-4 bg-gradient-to-b from-black z-10 w-screen flex justify-between'>
-      <img className='w-44' src={LOGO} alt='logo' />
-      {user && (<div className='p-2 flex'>
+    <div className='absolute px-8 py-4 bg-gradient-to-b from-black z-10 w-screen flex justify-between bg-black flex-col md:flex-row '>
+      <img className='w-44 mx-auto md:mx-0' src={LOGO} alt='logo' />
+      {user && (<div className='p-2 flex justify-between'>
         {gptSearch && (
           <div>
             <select className='mt-2 h-12 p-3 bg-gray-800 mr-3 text-white rounded' onChange={handleLanguageChange}>
@@ -65,7 +65,7 @@ const Header = () => {
           </div>
         )}
         <button className='p-2 h-10 mt-3 rounded px-2 bg-purple-800 text-white' onClick={handleToggleGptSearch}> {gptSearch ? 'Home Page' : 'GPT Search'}  </button>
-        {user.photoURL && <img className='p-2 mt-2 w-12' src={user.photoURL} alt="Profile" />}
+        {user.photoURL && <img className='hidden md:inline-block p-2 mt-2 w-12' src={user.photoURL} alt="Profile" />}
         <button onClick={handleSignOut} className='bg-red-700 p-2 h-10 mt-3 rounded shadow-sm text-white'>
           {"Sign Out"}
         </button>

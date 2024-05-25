@@ -53,10 +53,10 @@ const Login = () => {
     <div>
       <Header />
       <div className='absolute'>
-        <img className="concord-img vlv-creative" src={BACK_IMAGE} alt="" />
+        <img className="" src={BACK_IMAGE} alt="" />
       </div>
       <div >
-        <form onSubmit={(e) => e.preventDefault()} className='w-3/12 absolute p-12 bg-black bg-opacity-80 my-36 mx-auto right-0 left-0 text-white'>
+        <form onSubmit={(e) => e.preventDefault()} className='w-full md:w-3/12 absolute p-1 md:p-12 bg-black bg-opacity-80 my-36 mx-auto right-0 left-0 text-white'>
           <h1 className='font-bold text-3xl py-4'>{isSignInForm ? 'Sign In' : 'Sign Up'}</h1>
           {!isSignInForm && (
             <input ref={fullName} type='text' placeholder='Full Name' className="p-4 my-4 w-full rounded bg-gray-700" />

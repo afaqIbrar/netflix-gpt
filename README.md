@@ -34,7 +34,16 @@
     - Add custom hooks for these movie types and dispatch the actions
     - Make the UI look good with tailwind
     - Create GPT search bar
-    - Implement Multi Language feature in GPT Search 
+    - Implement Multi Language feature in GPT Search
+    - GPT Search API Call 
+    - Memoization
+    - fetch GPT Movies suggestions from  tmdb
+    - create gpt slice and added data
+    - Reused the movie list component to show the suggested movies 
+    - Added Memoization
+    - Adding .env file
+    - Adding .env file to .gitignore
+    - Made the app responsive
     
 
 
