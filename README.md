@@ -26,6 +26,14 @@
     - Fetch Data for trailer video
     - Update store with trailer video data
     - Embedded the youtube video and make it mute and auto play
+    - Build Secondary Component
+    - Build Movie List component
+    - Build Movie card
+    - Add tmdb image cdn
+    - Add Now Playing, Toprated upcoming trending action in movies reducer
+    - Add custom hooks for these movie types and dispatch the actions
+    - Make the UI look good with tailwind
+    
 
 
 
